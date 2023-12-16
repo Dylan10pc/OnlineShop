@@ -33,6 +33,7 @@ public class Electronics extends Product {
 
     public int getWarranty() {
         return Warranty;
+
     }
 
     @Override
