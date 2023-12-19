@@ -1,2 +1,3 @@
 
-Id: w54543 Name: lol Items: 12 Price: 12.0 Colour: red Size: L
+Id: w1 Name: lol Items: 12 Price: 12.0 Warranty: 12 Brand: lol
+Id: w1 Name: lol Items: 5 Price: 7.0 Colour: red Size: l

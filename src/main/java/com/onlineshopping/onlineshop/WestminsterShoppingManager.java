@@ -53,7 +53,7 @@ public class WestminsterShoppingManager implements ShoppingManager {
                     break;
 
                 case 5:
-                    GuiMain Gui = new GuiMain();
+                    GuiMain Gui = new GuiMain(ProductList);
                     Gui.ShowGuiMain();
                     break;
 
