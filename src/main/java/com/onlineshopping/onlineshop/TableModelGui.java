@@ -1,9 +1,8 @@
 package com.onlineshopping.onlineshop;
 
-import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
-import javax.swing.table.DefaultTableCellRenderer;
+
 
 public class TableModelGui extends AbstractTableModel {
     private String[] columnsNames = {"Product ID","Name","Category","Price","Info"};
