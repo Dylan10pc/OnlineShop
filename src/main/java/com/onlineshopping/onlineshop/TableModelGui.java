@@ -1,11 +1,14 @@
 package com.onlineshopping.onlineshop;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.table.AbstractTableModel;
+import javax.swing.table.DefaultTableCellRenderer;
 
 public class TableModelGui extends AbstractTableModel {
     private String[] columnsNames = {"Product ID","Name","Category","Price","Info"};
     private ArrayList<Product> ProductList;
+
 
     public TableModelGui(ArrayList<Product> productlist) {
         ProductList = productlist;
@@ -44,23 +47,39 @@ public class TableModelGui extends AbstractTableModel {
 
         else if(columnIndex == 4){
             if (ProductList.get(rowIndex) instanceof Electronics) {
-                temp = ProductList.get(rowIndex).getID();
-            }
+                Electronics electricinfo = (Electronics) ProductList.get(rowIndex);
+                temp = electricinfo.getBrand()+ "   " + electricinfo.getWarranty();
+            } else if (ProductList.get(rowIndex) instanceof Clothing) {
+                Clothing clothinginfo = (Clothing) ProductList.get(rowIndex);
+                temp = clothinginfo.getColour() + "   " + clothinginfo.getSize();
+            }       
         }
         return temp;
     }
 
-    public String getColumnNames(int col){
+    @Override
+    public String getColumnName(int col){
         return columnsNames[col];
     }
 
 
   public Class getColumnClass(int col){
-        if (col ==2) {
+        if (col == 4) {
             return double.class;
         }
         else{
             return String.class;
         }
     } 
+
+    public void setProductList(ArrayList<Product> productList) {
+        this.ProductList = productList;
+        fireTableDataChanged();
+    }
+
+    public boolean producthighlightrow(int rowIndex) {
+        return ProductList.get(rowIndex).getNumberofavailableitems() < 3;
+    }
+
+    
 }
