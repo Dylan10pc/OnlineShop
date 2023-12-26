@@ -8,7 +8,9 @@ package com.onlineshopping.onlineshop;
  *
  * @author Dylan
  */
+
 public abstract class Product implements Comparable<Product> {
+    //Made Protected so that is accessed in same class, subclass or same package
     protected String ID;
     protected String Name;
     protected int Numberofavailableitems;
@@ -23,6 +25,7 @@ public abstract class Product implements Comparable<Product> {
         this.Price = price;
     }
 
+    //set The objects
     public void setID(String id){
         ID = id;
     }
@@ -39,6 +42,7 @@ public abstract class Product implements Comparable<Product> {
         Price = price;
     }
 
+    //Returns the objects 
     public String getID(){
         return ID;
     }

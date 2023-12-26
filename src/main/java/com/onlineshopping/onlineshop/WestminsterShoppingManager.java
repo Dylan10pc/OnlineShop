@@ -20,8 +20,10 @@ public class WestminsterShoppingManager implements ShoppingManager {
         Type = Type;
     }
 
+    //loops the whole code
     public void ManagerMenu(String id) {
 
+        //Sends you to the different methods and handles users inputs
         boolean Done = true;
         while (Done) {
             System.out.println("Please Select An Option:");
@@ -61,6 +63,7 @@ public class WestminsterShoppingManager implements ShoppingManager {
         }
     }
 
+    //adds a new product to the product list based on user input
     public void AddProduct(ArrayList<Product> ProductList, String Type) {
         Scanner input = new Scanner(System.in);
 
@@ -86,6 +89,7 @@ public class WestminsterShoppingManager implements ShoppingManager {
                 System.out.println("How much will the Product be");
                 double price = input.nextDouble();
 
+                //adds it through the electronic class
                 ProductList.add(new Electronics(id, name, items, price, brand, warranty));
             } else {
                 System.out.println("Cannot Add More Products, Please Delete A Product Before Trying Again");
@@ -111,6 +115,7 @@ public class WestminsterShoppingManager implements ShoppingManager {
                 System.out.println("How much will the Product be");
                 double price = input.nextDouble();
 
+                //adds it through the electronic class
                 ProductList.add(new Clothing(id, name, items, price, colour, size));
             } else {
                 System.out.println("Cannot Add More Products, Please Delete A Product Before Trying Again");
@@ -119,8 +124,10 @@ public class WestminsterShoppingManager implements ShoppingManager {
         }
     }
 
+    //Deletes a product from the product list based on user input
     public void DeleteProduct(ArrayList<Product> ProductList) {
 
+        //deletes the product based in id, it finds the id in the list and deletes it
         Scanner input = new Scanner(System.in);
         System.out.println("What Product Would You like to Delete Please Give ID");
         String iddelete = input.next();
@@ -134,6 +141,7 @@ public class WestminsterShoppingManager implements ShoppingManager {
         }
     }
 
+    //prints the list of products and sorts them based on id by using the Overidden compareto methods
     public void PrintList() {
         Collections.sort(ProductList);
         for (Product printlist : ProductList) {
@@ -141,7 +149,7 @@ public class WestminsterShoppingManager implements ShoppingManager {
         }
     }
 
-    // THIS STILL NEEDS TO BE COMPLETED TOO
+    //saves the list of products in a file by making them readable and then writing them in
     public void SaveList() {
         Scanner input = new Scanner(System.in);
         System.out.println("Would You like to save or load the list");
@@ -165,19 +173,8 @@ public class WestminsterShoppingManager implements ShoppingManager {
                 e.printStackTrace();
             }
 
-        } else if (whichtype.equals("load")) {
-            try {
-                FileReader file = new FileReader("savedProduct.txt");
-                BufferedReader reader = new BufferedReader(file);
-                
-
-            } catch (IOException e) {
-                System.out.println("Error Reading file");
-                e.printStackTrace();
-            }
-
+        } 
         }
-
     }
 
-}
+

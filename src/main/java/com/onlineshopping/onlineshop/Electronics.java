@@ -12,6 +12,7 @@ public class Electronics extends Product {
     private String Brand;
     private int Warranty;
 
+    //initialise instance variables that belong to the subclass and to the superclass
     public Electronics(String id, String name, int items, double price, String brand, int warranty){
         super(id, name, items, price);
         Brand = brand;
@@ -19,6 +20,7 @@ public class Electronics extends Product {
 
     }
 
+    //set the objects
     public void setBrand(String brand) {
         Brand = brand;
     }
@@ -27,6 +29,7 @@ public class Electronics extends Product {
         Warranty = warranty;
     }
 
+    //return the objects
     public String getBrand() {
         return Brand;
     }
@@ -36,11 +39,13 @@ public class Electronics extends Product {
 
     }
 
+    //Overrides so that the arraylist is readable
     @Override
     public String toString() {
         return "Id: " + ID + " Name: " + Name + " Items: " + Numberofavailableitems + " Price: " + Price + " Warranty: " + Warranty + " Brand: " + Brand;
     }
 
+    //Ovverides to be able to sort the arraylist based on Ids
     @Override
     public int compareTo(Product ProList) {
         return ID.compareTo(ProList.ID);

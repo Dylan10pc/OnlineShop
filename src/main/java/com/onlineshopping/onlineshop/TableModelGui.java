@@ -77,7 +77,7 @@ public class TableModelGui extends AbstractTableModel {
     }
 
     public boolean producthighlightrow(int rowIndex) {
-        return ProductList.get(rowIndex).getNumberofavailableitems() < 3;
+        return ProductList.get(rowIndex).getNumberofavailableitems() <= 3;
     }
 
     
