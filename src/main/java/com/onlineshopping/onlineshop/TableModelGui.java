@@ -13,16 +13,19 @@ public class TableModelGui extends AbstractTableModel {
         ProductList = productlist;
     }
 
+    //gets the number of columns
       @Override
     public int getColumnCount() {
         return columnsNames.length;
     }   
 
+    //get the number of rows
     @Override
     public int  getRowCount() {
         return ProductList.size();
     }
 
+    //gets the data for each column
     @Override
     public Object getValueAt(int rowIndex, int columnIndex ){
         Object temp = null;
@@ -44,6 +47,7 @@ public class TableModelGui extends AbstractTableModel {
             temp = ProductList.get(rowIndex).getPrice();
         }
 
+        //gets extra detail by finding out wether the product is electronic or clothing
         else if(columnIndex == 4){
             if (ProductList.get(rowIndex) instanceof Electronics) {
                 Electronics electricinfo = (Electronics) ProductList.get(rowIndex);
@@ -56,12 +60,14 @@ public class TableModelGui extends AbstractTableModel {
         return temp;
     }
 
+    //get the name of column
     @Override
     public String getColumnName(int col){
         return columnsNames[col];
     }
 
 
+    //get the class type of a column
   public Class getColumnClass(int col){
         if (col == 4) {
             return double.class;
@@ -71,11 +77,13 @@ public class TableModelGui extends AbstractTableModel {
         }
     } 
 
+    //set the list and updates the table
     public void setProductList(ArrayList<Product> productList) {
         this.ProductList = productList;
         fireTableDataChanged();
     }
 
+    //highlights a row if the number of items is 3 or above
     public boolean producthighlightrow(int rowIndex) {
         return ProductList.get(rowIndex).getNumberofavailableitems() <= 3;
     }
