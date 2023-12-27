@@ -8,7 +8,6 @@ public class WestminsterShoppingManager implements ShoppingManager {
     private String Type;
 
     public WestminsterShoppingManager() {
-        this.ProductList = ProductList;
         this.Type = Type;
     }
 
@@ -137,6 +136,7 @@ public class WestminsterShoppingManager implements ShoppingManager {
             if (iddelete.equals(ProductList.get(i).getID())) {
                 idofproduct = i;
                 ProductList.remove(idofproduct);
+                System.out.println("This Product has been deleted");
             }
         }
     }
