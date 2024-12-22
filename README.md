@@ -1,0 +1,1 @@
+A Java based application using Java Swing I created a online shopping experience, when it is run a user can buy a product thats listed on the shop the user can also shop multiple products and the program will calc the price. The admin can edit add or delete the products as well.
